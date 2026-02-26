@@ -9,6 +9,5 @@ DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 
 [compat]
-CSV = "0.10.16"
 DelimitedFiles = "1.9.1"
 Revise = "3.13.2"
