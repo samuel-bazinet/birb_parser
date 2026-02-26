@@ -1,6 +1,7 @@
 module birb_parser
 
 using DelimitedFiles
+using JSON3
 
 mutable struct Bird
     infraclass::String
@@ -39,10 +40,17 @@ function main()
             bird = Bird(bird.infraclass, bird.order, bird.family, bird.genus, "", "")
         end
     end
-    mkdir("out")
+    if !isdir("out")
+        mkdir("out")
+    end
     open("./out/out.csv", "w") do file
         content = map(b_to_l, birds)
         writedlm(file, content, ',')
+    end
+
+    open("./out/out.json", "w") do file
+        content = JSON3.write(birds)
+        write(file, content)
     end
 end
 
