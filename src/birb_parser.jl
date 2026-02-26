@@ -11,6 +11,9 @@ mutable struct Bird
     name::String
 end
 
+function b_to_l(bird::Bird)::Array{String}
+    [bird.infraclass, bird.order, bird.family, bird.genus, bird.species, bird.name]
+end
 
 function main()
     inFile = "./resources/master_ioc_list_v15.1 - Master.csv"
@@ -36,9 +39,10 @@ function main()
             bird = Bird(bird.infraclass, bird.order, bird.family, bird.genus, "", "")
         end
     end
-
-    for b in birds
-        println(b)
+    mkdir("out")
+    open("./out/out.csv", "w") do file
+        content = map(b_to_l, birds)
+        writedlm(file, content, ',')
     end
 end
 
