@@ -1,0 +1,14 @@
+name = "birb_parser"
+uuid = "d8e0512e-bb4e-4ccd-b4ca-f506e09c9e02"
+version = "0.1.0"
+authors = ["samuel-bazinet <bazinet.samuel1@gmail.com>"]
+
+[deps]
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+
+[compat]
+CSV = "0.10.16"
+DelimitedFiles = "1.9.1"
+Revise = "3.13.2"
